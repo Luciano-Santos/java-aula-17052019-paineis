@@ -16,6 +16,9 @@ public class Aula17052019paineis {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Calculo calculo = new Calculo();
+        calculo.setVisible(true);
+
     }
-    
+
 }

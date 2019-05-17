@@ -152,6 +152,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Limpar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBlimparActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -281,6 +284,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Limpar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBlimparareaActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

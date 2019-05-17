@@ -1,3 +1,5 @@
+package aula17052019paineis;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -67,6 +69,11 @@ public class Calculo extends javax.swing.JFrame {
         jBcalcular.setText("Calcular");
 
         jBlimpar.setText("Limpar");
+        jBlimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBlimparActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelDeltaLayout = new javax.swing.GroupLayout(jPanelDelta);
         jPanelDelta.setLayout(jPanelDeltaLayout);
@@ -144,6 +151,11 @@ public class Calculo extends javax.swing.JFrame {
         jBcalculararea.setText("Calcular");
 
         jBlimpararea.setText("Limpar");
+        jBlimpararea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBlimparareaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelAreaLayout = new javax.swing.GroupLayout(jPanelArea);
         jPanelArea.setLayout(jPanelAreaLayout);
@@ -217,6 +229,14 @@ public class Calculo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFbaseActionPerformed
 
+    private void jBlimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlimparActionPerformed
+limpardelta();        // TODO add your handling code here:
+    }//GEN-LAST:event_jBlimparActionPerformed
+
+    private void jBlimparareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlimparareaActionPerformed
+limpararea();        // TODO add your handling code here:
+    }//GEN-LAST:event_jBlimparareaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -278,4 +298,18 @@ public class Calculo extends javax.swing.JFrame {
     private javax.swing.JTextField jTFvalordelta;
     private javax.swing.JTabbedPane jTablePaneCalculo;
     // End of variables declaration//GEN-END:variables
+
+    private void limpardelta() {
+        jTFvalorA.setText("");
+        jTFvalorB.setText("");
+        jTFvalorC.setText("");
+        jTFvalorA.requestFocus();
+    }
+    
+    private void limpararea() {
+        jTFbase.setText("");
+        jTFaltura.setText("");
+        
+        jTFbase.requestFocus();
+    }
 }
