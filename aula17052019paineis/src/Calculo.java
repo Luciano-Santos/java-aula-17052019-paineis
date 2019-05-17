@@ -25,8 +25,9 @@ public class Calculo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        jTablePaneCalculo = new javax.swing.JTabbedPane();
+        jPanelDelta = new javax.swing.JPanel();
         jLa = new javax.swing.JLabel();
         jTFvalorA = new javax.swing.JTextField();
         jLb = new javax.swing.JLabel();
@@ -37,7 +38,17 @@ public class Calculo extends javax.swing.JFrame {
         jTFvalordelta = new javax.swing.JTextField();
         jBcalcular = new javax.swing.JButton();
         jBlimpar = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        jPanelArea = new javax.swing.JPanel();
+        jLbase = new javax.swing.JLabel();
+        jTFbase = new javax.swing.JTextField();
+        jLaltura = new javax.swing.JLabel();
+        jTFaltura = new javax.swing.JTextField();
+        jRBquadrado = new javax.swing.JRadioButton();
+        jRBtriangulo = new javax.swing.JRadioButton();
+        jLarea = new javax.swing.JLabel();
+        jTFarea = new javax.swing.JTextField();
+        jBcalculararea = new javax.swing.JButton();
+        jBlimpararea = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Delta & Área");
@@ -50,38 +61,41 @@ public class Calculo extends javax.swing.JFrame {
 
         jLdelta.setText("Valor Delta");
 
+        jTFvalordelta.setEditable(false);
+        jTFvalordelta.setEnabled(false);
+
         jBcalcular.setText("Calcular");
 
         jBlimpar.setText("Limpar");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelDeltaLayout = new javax.swing.GroupLayout(jPanelDelta);
+        jPanelDelta.setLayout(jPanelDeltaLayout);
+        jPanelDeltaLayout.setHorizontalGroup(
+            jPanelDeltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelDeltaLayout.createSequentialGroup()
                 .addComponent(jLa)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelDeltaLayout.createSequentialGroup()
+                .addGroup(jPanelDeltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTFvalorA)
                     .addComponent(jTFvalorB)
                     .addComponent(jTFvalorC)
                     .addComponent(jTFvalordelta)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelDeltaLayout.createSequentialGroup()
+                        .addGroup(jPanelDeltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLb)
                             .addComponent(jLc)
                             .addComponent(jLdelta))
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanelDeltaLayout.createSequentialGroup()
                         .addComponent(jBcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                         .addComponent(jBlimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanelDeltaLayout.setVerticalGroup(
+            jPanelDeltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelDeltaLayout.createSequentialGroup()
                 .addComponent(jLa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTFvalorA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -98,40 +112,110 @@ public class Calculo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTFvalordelta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelDeltaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBcalcular)
                     .addComponent(jBlimpar))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Delta", jPanel1);
+        jTablePaneCalculo.addTab("Delta", jPanelDelta);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
+        jLbase.setText("Base");
+
+        jTFbase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFbaseActionPerformed(evt);
+            }
+        });
+
+        jLaltura.setText("Altura");
+
+        buttonGroup1.add(jRBquadrado);
+        jRBquadrado.setText("Quadrado");
+
+        buttonGroup1.add(jRBtriangulo);
+        jRBtriangulo.setText("Triângulo");
+
+        jLarea.setText("Área");
+
+        jTFarea.setEditable(false);
+        jTFarea.setEnabled(false);
+
+        jBcalculararea.setText("Calcular");
+
+        jBlimpararea.setText("Limpar");
+
+        javax.swing.GroupLayout jPanelAreaLayout = new javax.swing.GroupLayout(jPanelArea);
+        jPanelArea.setLayout(jPanelAreaLayout);
+        jPanelAreaLayout.setHorizontalGroup(
+            jPanelAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelAreaLayout.createSequentialGroup()
+                .addGroup(jPanelAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLbase)
+                    .addComponent(jLaltura))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanelAreaLayout.createSequentialGroup()
+                .addGroup(jPanelAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTFaltura)
+                    .addComponent(jTFbase, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanelAreaLayout.createSequentialGroup()
+                        .addComponent(jRBquadrado)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jRBtriangulo))
+                    .addComponent(jTFarea)
+                    .addGroup(jPanelAreaLayout.createSequentialGroup()
+                        .addComponent(jLarea)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanelAreaLayout.createSequentialGroup()
+                        .addComponent(jBcalculararea, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                        .addComponent(jBlimpararea, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 272, Short.MAX_VALUE)
+        jPanelAreaLayout.setVerticalGroup(
+            jPanelAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelAreaLayout.createSequentialGroup()
+                .addComponent(jLbase)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTFbase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLaltura)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTFaltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRBquadrado)
+                    .addComponent(jRBtriangulo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLarea)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTFarea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelAreaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBcalculararea)
+                    .addComponent(jBlimpararea))
+                .addGap(0, 75, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Área", jPanel2);
+        jTablePaneCalculo.addTab("Área", jPanelArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTablePaneCalculo)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTablePaneCalculo)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTFbaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFbaseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFbaseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,18 +253,29 @@ public class Calculo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jBcalcular;
+    private javax.swing.JButton jBcalculararea;
     private javax.swing.JButton jBlimpar;
+    private javax.swing.JButton jBlimpararea;
     private javax.swing.JLabel jLa;
+    private javax.swing.JLabel jLaltura;
+    private javax.swing.JLabel jLarea;
     private javax.swing.JLabel jLb;
+    private javax.swing.JLabel jLbase;
     private javax.swing.JLabel jLc;
     private javax.swing.JLabel jLdelta;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanelArea;
+    private javax.swing.JPanel jPanelDelta;
+    private javax.swing.JRadioButton jRBquadrado;
+    private javax.swing.JRadioButton jRBtriangulo;
+    private javax.swing.JTextField jTFaltura;
+    private javax.swing.JTextField jTFarea;
+    private javax.swing.JTextField jTFbase;
     private javax.swing.JTextField jTFvalorA;
     private javax.swing.JTextField jTFvalorB;
     private javax.swing.JTextField jTFvalorC;
     private javax.swing.JTextField jTFvalordelta;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTablePaneCalculo;
     // End of variables declaration//GEN-END:variables
 }
