@@ -1,5 +1,7 @@
 package aula17052019paineis;
 
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -67,6 +69,11 @@ public class Calculo extends javax.swing.JFrame {
         jTFvalordelta.setEnabled(false);
 
         jBcalcular.setText("Calcular");
+        jBcalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBcalcularActionPerformed(evt);
+            }
+        });
 
         jBlimpar.setText("Limpar");
         jBlimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -230,12 +237,16 @@ public class Calculo extends javax.swing.JFrame {
     }//GEN-LAST:event_jTFbaseActionPerformed
 
     private void jBlimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlimparActionPerformed
-limpardelta();        // TODO add your handling code here:
+        limpardelta();        // TODO add your handling code here:
     }//GEN-LAST:event_jBlimparActionPerformed
 
     private void jBlimparareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlimparareaActionPerformed
-limpararea();        // TODO add your handling code here:
+        limpararea();        // TODO add your handling code here:
     }//GEN-LAST:event_jBlimparareaActionPerformed
+
+    private void jBcalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcalcularActionPerformed
+        calculardelta();        // TODO add your handling code here:
+    }//GEN-LAST:event_jBcalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,11 +316,28 @@ limpararea();        // TODO add your handling code here:
         jTFvalorC.setText("");
         jTFvalorA.requestFocus();
     }
-    
+
     private void limpararea() {
         jTFbase.setText("");
         jTFaltura.setText("");
-        
+
         jTFbase.requestFocus();
     }
+
+    private void calculardelta() {
+        if (jTFvalorA.getText().length() <= 0
+                || jTFvalorB.getText().length() <= 0
+                || jTFvalorC.getText().length() <= 0) {
+            JOptionPane.showMessageDialog(null, "Todos os valores devem"
+                    + "ser digitados");
+        } else {
+            float valorA, valorB, valorC, valordelta = 0;
+            valorA = Float.parseFloat(jTFvalorA.getText());
+            valorB = Float.parseFloat(jTFvalorB.getText());
+            valorC = Float.parseFloat(jTFvalorC.getText());
+            valordelta = (valorB * valorB) - 4 * valorA * valorC;
+            jTFvalordelta.setText(String.valueOf(valordelta));
+        }
+    }
+
 }
