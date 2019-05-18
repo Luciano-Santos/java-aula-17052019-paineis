@@ -156,6 +156,11 @@ public class Calculo extends javax.swing.JFrame {
         jTFarea.setEnabled(false);
 
         jBcalculararea.setText("Calcular");
+        jBcalculararea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBcalcularareaActionPerformed(evt);
+            }
+        });
 
         jBlimpararea.setText("Limpar");
         jBlimpararea.addActionListener(new java.awt.event.ActionListener() {
@@ -248,6 +253,10 @@ public class Calculo extends javax.swing.JFrame {
         calculardelta();        // TODO add your handling code here:
     }//GEN-LAST:event_jBcalcularActionPerformed
 
+    private void jBcalcularareaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcalcularareaActionPerformed
+        calculararea();        // TODO add your handling code here:
+    }//GEN-LAST:event_jBcalcularareaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -337,6 +346,27 @@ public class Calculo extends javax.swing.JFrame {
             valorC = Float.parseFloat(jTFvalorC.getText());
             valordelta = (valorB * valorB) - 4 * valorA * valorC;
             jTFvalordelta.setText(String.valueOf(valordelta));
+        }
+    }
+
+    private void calculararea() {
+        if (jTFbase.getText().length() <= 0
+                || jTFaltura.getText().length() <= 0) {
+            JOptionPane.showMessageDialog(null, "Todos os valores devem"
+                    + "ser digitados");
+        } else {
+            float base, altura, area = 0;
+            base = Float.parseFloat(jTFbase.getText());
+            altura = Float.parseFloat(jTFaltura.getText());
+            if (jRBquadrado.isSelected()) {
+                area = base * altura;
+                jTFarea.setText(String.valueOf(area));
+            } else {
+                if (jRBtriangulo.isSelected()) {
+                    area = (base * altura) / 2;
+                    jTFarea.setText(String.valueOf(area));
+                }
+            }
         }
     }
 
